@@ -9,3 +9,4 @@ ops/inventory/shrink_report_*.txt
 ops/labor/labor_report_*.txt
 ops/financial/cashflow_report_*.txt
 ops/logs/
+ops/logs/dashboard/*.html

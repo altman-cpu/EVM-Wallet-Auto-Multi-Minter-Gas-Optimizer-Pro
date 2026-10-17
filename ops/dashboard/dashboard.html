@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Station Dashboard — Station-1 | 2026-10-17 02:11</title>
+<style>
+  :root { --red:#dc2626; --yellow:#d97706; --green:#16a34a; --ink:#0f172a; --muted:#64748b; --line:#e2e8f0; --bg:#f8fafc; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family: ui-sans, system-ui, -apple-system, Segoe UI, Roboto, Arial; color:var(--ink); background:#fff; font-size:12px; line-height:1.35; }
+  header { display:flex; justify-content:space-between; align-items:flex-start; border-bottom:2px solid var(--ink); padding:10px 14px 8px; }
+  header h1 { margin:0; font-size:14px; letter-spacing:.2px; }
+  header .meta { text-align:right; font-size:11px; color:var(--muted); }
+  .grid { display:grid; grid-template-columns: 1.6fr 1fr; gap:10px; padding:10px 14px; }
+  .card { border:1px solid var(--line); border-radius:8px; padding:8px 10px; background:var(--bg); }
+  .card h2 { margin:0 0 6px; font-size:11px; letter-spacing:.6px; text-transform:uppercase; color:var(--muted); }
+  table { width:100%; border-collapse:collapse; font-size:11px; }
+  th { text-align:left; font-weight:600; color:var(--muted); border-bottom:1px solid var(--line); padding:4px 4px; font-size:10px; text-transform:uppercase; letter-spacing:.3px; }
+  td { padding:4px 4px; border-bottom:1px solid #f1f5f9; }
+  .kpis { display:grid; grid-template-columns: repeat(4,1fr); gap:8px; margin-bottom:8px; }
+  .kpi-mini { border:1px solid var(--line); border-radius:8px; padding:6px 8px; background:#fff; text-align:center; }
+  .kpi-mini .label { font-size:9px; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; }
+  .kpi-mini .value { font-size:13px; font-weight:700; }
+  .kpi-mini .spark { margin-top:4px; }
+  .gauge { text-align:center; }
+  .gauge .number { font-size:20px; font-weight:800; color:#dc2626; }
+  .gauge .badge { display:inline-block; padding:2px 6px; border-radius:999px; font-size:9px; font-weight:700; color:#fff; background:#dc2626; }
+  .strip { display:flex; gap:8px; padding:0 14px 8px; }
+  .strip > div { flex:1; border:1px solid var(--line); border-radius:8px; padding:6px 8px; background:#fff; font-size:11px; }
+  .sign { display:flex; gap:12px; padding:8px 14px 10px; }
+  .sign > div { flex:1; border-top:1px solid var(--ink); padding-top:4px; font-size:11px; text-align:center; }
+  .controls { padding:6px 14px; display:flex; gap:8px; justify-content:flex-end; }
+  .btn { padding:6px 10px; border:1px solid var(--line); border-radius:6px; background:#fff; cursor:pointer; font-size:11px; }
+  .note { font-size:10px; color:var(--muted); padding:0 14px 10px; }
+  @media print {
+    .controls { display:none !important; }
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .grid { padding:8px 10px; }
+    header { padding:8px 10px 6px; }
+  }
+  @media (prefers-color-scheme: dark) {
+    body { background:#0b1220; color:#e2e8f0; }
+    .card, .kpi-mini, .strip > div { background:#0f172a; border-color:#1e293b; }
+    th { color:#94a3b8; border-color:#1e293b; }
+    td { border-color:#1e293b; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>⛽ Mobile 1 Gas — Station-1 <span style="font-weight:400; color:var(--muted)">| Strong Ownership Dashboard</span></h1>
+    <div style="font-size:11px; color:var(--muted)">Week ending 2026-10-13 • Owner: G.T.Sanga (review) • Builder: ops/dashboard/dashboard_builder.py</div>
+  </div>
+  <div class="meta">
+    <div>Generated 2026-10-17 02:11</div>
+    <div>Last 4 weeks • Print → Save as PDF → file in ops/logs/dashboard/</div>
+  </div>
+</header>
+
+<div class="controls">
+  <button class="btn" onclick="window.print()">⎙ Print / Save PDF</button>
+  <button class="btn" onclick="navigator.clipboard.writeText(location.href)">Copy link</button>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <h2>KPI — Last 4 Weeks (execution > market)</h2>
+    <div class="kpis">
+      <div class="kpi-mini"><div class="label">Gallons</div><div class="value">24,100</div><div class="spark"><svg width="80" height="20" viewBox="0 0 80 20" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" stroke="#0f766e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" points="2.0,18.0 27.3,13.5 52.7,13.5 78.0,2.0"/><circle cx="78.0" cy="2.0" r="2" fill="#0f766e"/></svg></div><div style="font-size:10px;color:var(--muted)">21,800 → 24,100</div></div>
+      <div class="kpi-mini"><div class="label">CPG Margin</div><div class="value">$0.253</div><div class="spark"><svg width="80" height="20" viewBox="0 0 80 20" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" stroke="#0f766e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" points="2.0,18.0 27.3,16.2 52.7,16.2 78.0,2.0"/><circle cx="78.0" cy="2.0" r="2" fill="#0f766e"/></svg></div><div style="font-size:10px;color:var(--muted)">Fuel margin ÷ gal</div></div>
+      <div class="kpi-mini"><div class="label">Store Margin</div><div class="value">53.6%</div><div class="spark"><svg width="80" height="20" viewBox="0 0 80 20" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" stroke="#0f766e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" points="2.0,18.0 27.3,13.6 52.7,13.6 78.0,2.0"/><circle cx="78.0" cy="2.0" r="2" fill="#0f766e"/></svg></div><div style="font-size:10px;color:var(--muted)">Target >45% (52-54% healthy)</div></div>
+      <div class="kpi-mini"><div class="label">Gross Profit</div><div class="value">$26,000</div><div class="spark"><svg width="80" height="20" viewBox="0 0 80 20" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" stroke="#0f766e" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" points="2.0,18.0 27.3,13.5 52.7,13.5 78.0,2.0"/><circle cx="78.0" cy="2.0" r="2" fill="#0f766e"/></svg></div><div style="font-size:10px;color:var(--muted)">Fuel + store gross</div></div>
+    </div>
+    <table>
+      <thead><tr><th>Week</th><th style="text-align:right">Gal</th><th style="text-align:right">CPG</th><th style="text-align:right">Store%</th><th style="text-align:right">Gross</th><th style="text-align:right">Labor%</th><th style="text-align:right">Cash Var</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>2026-09-22</td>
+          <td style="text-align:right">21,800</td>
+          <td style="text-align:right">0.234</td>
+          <td style="text-align:right">51.8%</td>
+          <td style="text-align:right">$22,800</td>
+          <td style="text-align:right">36.4% 🔴</td>
+          <td style="text-align:right;color:#111">$-18.00</td>
+        </tr>
+        <tr>
+          <td>2026-09-29</td>
+          <td style="text-align:right">22,450</td>
+          <td style="text-align:right">0.236</td>
+          <td style="text-align:right">52.3%</td>
+          <td style="text-align:right">$23,700</td>
+          <td style="text-align:right">35.9% 🔴</td>
+          <td style="text-align:right;color:#dc2626">$-32.50</td>
+        </tr>
+        <tr>
+          <td>2026-10-06</td>
+          <td style="text-align:right">22,450</td>
+          <td style="text-align:right">0.236</td>
+          <td style="text-align:right">52.3%</td>
+          <td style="text-align:right">$23,700</td>
+          <td style="text-align:right">35.9% 🔴</td>
+          <td style="text-align:right;color:#dc2626">$-32.50</td>
+        </tr>
+        <tr>
+          <td>2026-10-13</td>
+          <td style="text-align:right">24,100</td>
+          <td style="text-align:right">0.253</td>
+          <td style="text-align:right">53.6%</td>
+          <td style="text-align:right">$26,000</td>
+          <td style="text-align:right">33.8%</td>
+          <td style="text-align:right;color:#111">$-14.00</td>
+        </tr></tbody>
+    </table>
+    <div style="font-size:10px;color:var(--muted);margin-top:4px">🔴 = labor >35.0% / store <45.0% / cpg <$0.05 — owner decision, not discussion. Trend vs prior week matters more than one week.</div>
+  </div>
+
+  <div class="card">
+    <h2>Cash — Weeks of Cover (survival)</h2>
+    <div class="gauge">
+      <div class="number">0.4 weeks</div>
+      <div class="badge">RED <4w</div>
+      <div style="font-size:11px; margin-top:6px; color:var(--muted)">Ending $12,000 ÷ Avg outflow $30,433</div>
+    </div>
+    <table style="margin-top:8px">
+      <tr><th>Ending cash</th><td style="text-align:right">$12,000</td></tr>
+      <tr><th>Avg weekly outflow</th><td style="text-align:right">$30,433</td></tr>
+      <tr><th>Weeks in forecast</th><td style="text-align:right">6</td></tr>
+      <tr><th>Reserve rule</th><td style="text-align:right"><span style="color:var(--red)">RED &lt;4.0w</span> • <span style="color:var(--yellow)">4.0-6.0w caution</span> • <span style="color:var(--green)">6w+ healthy</span></td></tr>
+    </table>
+    <div style="font-size:10px; color:var(--muted); margin-top:6px">If RED: freeze capex/owner distro, confirm distributor credit line. Do not shift operating cash to crypto/speculation. Ending < avg*4 = action that day.</div>
+  </div>
+</div>
+
+<div class="grid" style="padding-top:0">
+  <div class="card">
+    <h2>Shrink — Top 5 by $ Loss (all weeks in file)</h2>
+    <table>
+      <thead><tr><th>SKU</th><th>Category</th><th style="text-align:right">Qty</th><th style="text-align:right">$ Loss</th><th>Wk Flagged</th><th>Action</th></tr></thead>
+      <tbody><tr><td>ELFBAR-PEACH</td><td>Vape</td><td style='text-align:right'>+22</td><td style='text-align:right'>$264.00</td><td style='text-align:center'>4</td><td style='text-align:center'>🔴 daily 2-person count</td></tr><tr><td>MARLRED</td><td>Tobacco</td><td style='text-align:right'>+19</td><td style='text-align:right'>$155.80</td><td style='text-align:center'>4</td><td style='text-align:center'>🔴 daily 2-person count</td></tr><tr><td>MONSTER-GRN</td><td>Drink</td><td style='text-align:right'>+11</td><td style='text-align:right'>$19.80</td><td style='text-align:center'>4</td><td style='text-align:center'>🔴 daily 2-person count</td></tr></tbody>
+    </table>
+    <div style="font-size:10px;color:var(--muted);margin-top:4px">Rank = total shrink $ (qty × cost). Flag = >2% or >$75 in any week. Pattern 2 wks → locked case / limit access / invoice scan required.</div>
+  </div>
+  <div class="card">
+    <h2>Compliance & Ops Flags (7-day)</h2>
+    <table>
+      <tr><th>Reconciliation</th><td>1 cash / 1 gal flags in last 3 days</td></tr>
+      <tr><th>Labor</th><td>1 OT / 1 minor-risk / 1 unqualified</td></tr>
+      <tr><th>Price log</th><td>No price log yet — log every $ change with BOL ref — every $ change needs BOL/INV reason + dual approval</td></tr>
+      <tr><th>Tank</th><td>Check <code>ops/compliance/tank_log.md</code> due date — run <code>--check-tank-due</code></td></tr>
+    </table>
+    <div style="margin-top:8px; padding:6px; border:1px dashed var(--line); border-radius:6px; background:#fff; font-size:11px">
+      <strong>Owner takeaway this week:</strong> Fuel cpg moves with market — win on store margin + labor % + 0 shrink + 0 compliance misses. Clean logs = durable worth.
+    </div>
+  </div>
+</div>
+
+<div class="strip">
+  <div><strong>Manager notes (attach to PDF):</strong><br><br><span style="color:var(--muted)">Exceptions, void/refund >$20 with receipt #, price change BOL#</span></div>
+  <div><strong>Owner decision:</strong><br><br><span style="color:var(--muted)">System changed this week: ____________________ (not just coaching)</span></div>
+</div>
+
+<div class="sign">
+  <div>Manager ______ Date ______</div>
+  <div>Owner G.T.Sanga ______ Date ______</div>
+  <div>CPA ______ Date ______</div>
+  <div>File: ops/logs/dashboard/YYYY-W___.pdf</div>
+</div>
+
+<div class="note">General information only — not legal/tax/safety advice. thresholds (labor 35%, store 45%, cover 4/6 wks) match suite defaults — have CPA/lease adjust. Generated offline, no external calls, no wallet operations. Source CSVs versioned; PDFs gitignored.</div>
+
+</body>
+</html>
