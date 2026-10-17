@@ -1,0 +1,5 @@
+ops/logs/
+ops/reconciliation/reconciliation_report_*.txt
+ops/kpi/kpi_report_*.txt
+__pycache__/
+*.pyc

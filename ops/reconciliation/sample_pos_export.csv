@@ -1,0 +1,4 @@
+date,location,pump_gallons,fuel_sales,store_sales,cash_expected,cash_actual,card_sales,lottery_sales,atg_gallons
+2026-10-14,Station-1,3420.5,18745.20,5230.10,2100.00,2085.50,19840.80,890.00,3410.2
+2026-10-15,Station-1,3655.0,20110.75,5410.00,2350.00,2352.00,20880.75,920.50,3635.8
+2026-10-16,Station-1,2980.2,16320.40,4890.30,1900.00,1810.00,17410.70,850.00,2975.9
