@@ -1,0 +1,3 @@
+date,time,location,type,description,employees_present,reported_by,owner_action,status
+2026-10-16,22:14,Station-1,Cash Variance,"Cash $90 short, Z-report $1900 vs $1810 actual, 2nd count same",A.Rivera / J.Martinez,A.Rivera,review camera + surprise count next PM shift,open
+2026-10-15,08:30,Station-1,Delivery Short,"BOL 7500 vs ATG 7460 diff -40 gal, flagged",M.Rodriguez,M.Rodriguez,call distributor retain BOL-8824,closed

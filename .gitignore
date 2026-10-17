@@ -3,3 +3,9 @@ ops/reconciliation/reconciliation_report_*.txt
 ops/kpi/kpi_report_*.txt
 __pycache__/
 *.pyc
+ops/compliance/price_change_log.csv
+ops/compliance/delivery_report_*.txt
+ops/inventory/shrink_report_*.txt
+ops/labor/labor_report_*.txt
+ops/financial/cashflow_report_*.txt
+ops/logs/

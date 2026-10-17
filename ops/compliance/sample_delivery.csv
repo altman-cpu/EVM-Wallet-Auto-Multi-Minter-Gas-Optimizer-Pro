@@ -1,0 +1,4 @@
+date,invoice_id,fuel_type,bol_gallons,atg_before,atg_after,driver,approved_by
+2026-10-12,BOL-8821,regular,8500,12400,20850,M.Rodriguez,G.T.Sanga
+2026-10-13,BOL-8824,diesel,7500,9800,17260,J.Lee,G.T.Sanga
+2026-10-15,BOL-8830,premium,4000,11200,15100,T.Johnson,G.T.Sanga

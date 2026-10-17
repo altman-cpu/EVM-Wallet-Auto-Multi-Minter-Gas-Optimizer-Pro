@@ -1,0 +1,7 @@
+week_start,employee,role,age,scheduled_hours,actual_hours,hourly_rate,tobacco_alcohol_qualified,notes
+2026-10-13,A. Rivera,cashier,22,32,34,15.50,Y,
+2026-10-13,B. Chen,shift_lead,28,40,44,18.00,Y,OT cover Sat
+2026-10-13,C. Smith,cashier,17,20,20,14.00,N,minor — no tobacco
+2026-10-13,D. Patel,cashier,19,28,26,15.00,N,needs We Card
+2026-10-13,E. Johnson,cashier,24,36,36,15.50,Y,
+2026-10-13,F. Gomez,maintenance,35,24,24,16.00,N,

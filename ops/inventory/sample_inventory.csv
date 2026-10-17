@@ -1,0 +1,6 @@
+week_start,location,sku,category,upc,begin_count,received,purchased_cost,expected_sales_qty,pos_sales_qty,end_count,unit_retail
+2026-10-06,Station-1,MARLRED,Tobacco,123456789012,45,60,8.20,50,50,52,11.50
+2026-10-06,Station-1,MONSTER-GRN,Drink,098765432109,80,48,1.80,60,60,65,3.29
+2026-10-13,Station-1,MARLRED,Tobacco,123456789012,52,60,8.20,55,55,48,11.50
+2026-10-13,Station-1,MONSTER-GRN,Drink,098765432109,65,48,1.80,62,62,49,3.29
+2026-10-13,Station-1,ELFBAR-PEACH,Vape,112233445566,30,24,12.00,20,20,28,24.99
