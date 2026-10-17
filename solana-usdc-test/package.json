@@ -7,7 +7,8 @@
   "scripts": {
     "dry-run": "node send-usdc.mjs",
     "send": "SEND=1 node send-usdc.mjs",
-    "selftest": "node selftest.mjs"
+    "selftest": "node selftest.mjs",
+    "check": "node check-transfer.mjs"
   },
   "dependencies": {
     "@solana/spl-token": "0.4.15",

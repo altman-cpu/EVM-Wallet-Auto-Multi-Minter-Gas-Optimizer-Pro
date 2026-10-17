@@ -87,3 +87,17 @@ Start with `COUNT=1` on mainnet.
 | `CONFIRM_MAINNET` | for mainnet | | Must be `yes` |
 | `SEND` | no | unset | Set to `1` to broadcast. Unset means dry run |
 | `RPC_URL` | no | public endpoint | Custom RPC, for example a paid provider |
+
+## Check a transfer (read-only)
+
+`check-transfer.mjs` holds no keys and sends nothing. It shows balances and whether a transfer confirmed. Run it from your machine:
+
+```bash
+# Moonshot wallet balances
+ADDRESS=43XYBNz43sjw8Y9UPfJka317vSddrPuoDG9vNkkNTeLu npm run check
+
+# Balances plus the status of the transfer, using the signature the send step printed
+ADDRESS=43XYBNz43sjw8Y9UPfJka317vSddrPuoDG9vNkkNTeLu SIGNATURE=<signature> npm run check
+```
+
+It reports the USDC the recipient received in that transaction, so you can confirm the transfer amount.
