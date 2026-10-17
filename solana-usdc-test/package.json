@@ -1,0 +1,16 @@
+{
+  "name": "solana-usdc-test",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Send USDC (SPL token) on Solana devnet or mainnet to a single recipient wallet, with dry-run by default.",
+  "type": "module",
+  "scripts": {
+    "dry-run": "node send-usdc.mjs",
+    "send": "SEND=1 node send-usdc.mjs",
+    "selftest": "node selftest.mjs"
+  },
+  "dependencies": {
+    "@solana/spl-token": "0.4.15",
+    "@solana/web3.js": "1.98.4"
+  }
+}
