@@ -24,7 +24,6 @@ import {
   PublicKey,
   Transaction,
   clusterApiUrl,
-  sendAndConfirmTransaction,
 } from "@solana/web3.js";
 import {
   TOKEN_PROGRAM_ID,
@@ -77,6 +76,20 @@ export function buildUsdcTransferTx({ mint, payer, recipient, amountRaw, recipie
   tx.feePayer = payer;
   tx.recentBlockhash = blockhash;
   return { tx, sourceAta, recipientAta };
+}
+
+// Poll for confirmation over plain RPC. Does not rely on a WebSocket connection.
+async function waitForConfirmation(connection, sig, timeoutMs = 90_000) {
+  const start = Date.now();
+  while (Date.now() - start < timeoutMs) {
+    const [status] = (await connection.getSignatureStatuses([sig], { searchTransactionHistory: true })).value;
+    if (status) {
+      if (status.err) throw new Error(`transaction ${sig} failed: ${JSON.stringify(status.err)}`);
+      if (status.confirmationStatus === "confirmed" || status.confirmationStatus === "finalized") return;
+    }
+    await new Promise((r) => setTimeout(r, 2000));
+  }
+  throw new Error(`transaction ${sig} not confirmed after ${timeoutMs / 1000}s. Check the explorer before retrying, so you don't pay twice.`);
 }
 
 function loadKeypair(path) {
@@ -161,7 +174,8 @@ async function main() {
       continue;
     }
 
-    const sig = await sendAndConfirmTransaction(connection, tx, [payer], { commitment: "confirmed" });
+    const sig = await connection.sendRawTransaction(tx.serialize(), { preflightCommitment: "confirmed" });
+    await waitForConfirmation(connection, sig);
     const cluster = network === "devnet" ? "?cluster=devnet" : "";
     console.log(`[${i}/${count}] sent ${fmt(amountRaw)} USDC: ${sig}`);
     console.log(`        https://explorer.solana.com/tx/${sig}${cluster}`);

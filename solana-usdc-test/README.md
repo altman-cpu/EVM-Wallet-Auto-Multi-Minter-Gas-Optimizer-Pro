@@ -101,3 +101,16 @@ ADDRESS=43XYBNz43sjw8Y9UPfJka317vSddrPuoDG9vNkkNTeLu SIGNATURE=<signature> npm r
 ```
 
 It reports the USDC the recipient received in that transaction, so you can confirm the transfer amount.
+
+## Testing without a live network
+
+`test/mock-rpc.mjs` is a local fake Solana RPC on port 8899. It is for offline integration tests only. It is not a live network, so it cannot prove a real transfer. Use it to check that the scripts make the right RPC calls and handle the responses correctly:
+
+```bash
+npm run mock-rpc &                       # terminal 1
+RPC_URL=http://127.0.0.1:8899 ADDRESS=<ADDRESS> npm run check   # terminal 2
+```
+
+Live proof still requires running the commands above against mainnet.
+
+The send step now polls for confirmation over plain RPC and times out after 90 seconds. It does not depend on a WebSocket. If it times out, check the explorer link before retrying, so you don't send twice.
